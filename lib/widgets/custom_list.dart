@@ -5,9 +5,9 @@ import 'package:aplikasifood/theme.dart';
 class CustomList extends StatelessWidget {
   final String foodTitle;
   final String imageUrl;
-  final String namaPembuat;
+  final String deskripsi;
 
-  CustomList({ required this.foodTitle,  required this.imageUrl,  required this.namaPembuat});
+  const CustomList({Key? key,  required this.foodTitle,  required this.imageUrl,  required this.deskripsi}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,10 +17,10 @@ class CustomList extends StatelessWidget {
         children: [
           Image.asset(
             imageUrl,
-            width: 45,
-            height: 45,
+            width: 90,
+            height: 90,
           ),
-          SizedBox(width: 27),
+          SizedBox(width: 20),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,7 +30,7 @@ class CustomList extends StatelessWidget {
                   style: foodTextStyle,
                 ),
                 Text(
-                  namaPembuat,
+                  deskripsi,
                   style: namaTextStyle,
                 ),
                 SizedBox(height: 18),

@@ -18,7 +18,7 @@ class StartState extends State<SplashScreenPage> {
   }
 
   startTimer() async {
-    var duration = Duration(seconds: 2);
+    var duration = Duration(seconds: 3);
     return Timer(duration, route);
   }
 
@@ -30,7 +30,7 @@ class StartState extends State<SplashScreenPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff4141A4),
+      backgroundColor: Colors.white,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,19 +38,11 @@ class StartState extends State<SplashScreenPage> {
             Container(
               child: Image.asset(
                 'assets/logo.png',
-                height: 76,
-                width: 59,
+                height: 440,
+                width: 880,
               ),
               padding: EdgeInsets.only(top: 20),
             ),
-            SizedBox(height: 50),
-            Text(
-              'FUTURE JOBS',
-              style: splashTextStyle,
-            ),
-            Padding(
-              padding: EdgeInsets.only(top: 20),
-            )
           ],
         ),
       ),

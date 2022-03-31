@@ -15,27 +15,29 @@ class HomePage extends StatelessWidget {
           padding: const EdgeInsets.only(top: 30, left: 24, right: 24),
           child: Row(
             children: [
-                Image.asset(
-                'assets/user_pic.png',
+              Image.asset(
+                'assets/user.png',
                 width: 45,
                 height: 45,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Selamat Datang,',
-                    style: GoogleFonts.poppins(
-                      color: const Color(0xff272C2F),
-                      fontSize: 10,
-                      fontWeight: FontWeight.w400
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Selamat Datang,',
+                      style: GoogleFonts.poppins(
+                          color: const Color(0xff272C2F),
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400),
                     ),
-                  ),
-                  Text(
-                    'Chintya',
-                    style: subTitleTextStyle,
-                  ),
-                ],
+                    Text(
+                      'Chintya',
+                      style: subTitleTextStyle,
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -44,110 +46,178 @@ class HomePage extends StatelessWidget {
     }
 
     Widget body() {
-      return Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 24),
-              child: Text(
-                'Trending Recipes',
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 24, bottom: 10, top: 10),
+            child: Text(
+                  'Trending Recipes',
                 style: GoogleFonts.poppins(
                   color: const Color(0xff272C2F),
                   fontSize: 15,
                   fontWeight: FontWeight.w600,
                 ),
-              ),
-            ),
-            const SizedBox(
-              height: 16,
-            ),
-            SingleChildScrollView(
+                ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10),
+            child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
-              child: Padding(
-                padding: const EdgeInsets.only(
-                  left: 24,
-                ),
-                child: Row(
-                  children: [
-                    FoodCard(
-                      text: 'Website Developer',
-                      imageUrl: 'assets/card_category.png',
-                    ),
-                    const SizedBox(width: 16),
-                    FoodCard(
-                      text: 'Mobile Developer',
-                      imageUrl: 'assets/card_category2.png',
-                    ),
-                    const SizedBox(width: 16),
-                    FoodCard(
-                      text: 'App Designer',
-                      imageUrl: 'assets/card_category_three.png',
-                    ),
-                    const SizedBox(width: 16),
-                    FoodCard(
-                      text: 'Content Writer',
-                      imageUrl: 'assets/card_category_four.png',
-                    ),
-                    const SizedBox(width: 16),
-                    FoodCard(
-                      text: 'Video Grapher',
-                      imageUrl: 'assets/card_category_five.png',
-                    ),
-                    const SizedBox(width: 16),
-                  ],
-                ),
+              child: Row(
+                children:  const [
+                  CircleAvatar(
+                    radius: 45,
+                    backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('assets/es_dawet.png'),
+                  ),
+                  SizedBox(
+                    width: 2,
+                  ),
+                  CircleAvatar(
+                    radius: 45,
+                      backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('assets/es_teler.png'),
+                  ),
+                  SizedBox( 
+                    width: 2,
+                  ),
+                  CircleAvatar(
+                    radius: 45,
+                      backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('assets/es_degan.png'),
+                  ),
+                  SizedBox(
+                    width: 2,
+                  ),
+                  CircleAvatar(
+                    radius: 45,
+                      backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('assets/mie.png'),
+                  ),
+                  SizedBox(
+                    width: 2,
+                  ),
+                  CircleAvatar(
+                    radius: 45,
+                      backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('assets/roti.png'),
+                  ),
+                  SizedBox(
+                    width: 2,
+                  ),
+                  CircleAvatar(
+                    radius: 45,
+                      backgroundColor: Colors.white,
+                    backgroundImage: AssetImage('assets/roti2.png'),
+                  
+                  ),
+                ],
               ),
             ),
-            const SizedBox(height: 30),
-            Padding(
-              padding: const EdgeInsets.only(left: 24),
-              child: Text(
-                'Just Posted',
-                style: GoogleFonts.poppins(
-                  color: const Color(0xff272C2F),
-                  fontSize: 16,
-                  fontWeight: FontWeight.w400,
-                ),
+          ),
+
+          const SizedBox(
+            height: 30,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 24),
+            child: Text(
+              'Resep Favorit',
+              style: GoogleFonts.poppins(
+                color: const Color(0xff272C2F),
+                fontSize: 15,
+                fontWeight: FontWeight.w600,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16, left: 24.0),
-              child: CustomList(
-                imageUrl: 'assets/google-icon.png',
-                foodTitle: 'Front-End Developer',
-                namaPembuat: 'Google',
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Padding(
+              padding: const EdgeInsets.only(
+                left: 24,
+              ),
+              child: Row(
+                children: [
+                  FoodCard(
+                    text: 'Dimsum',
+                    imageUrl: 'assets/makanan.png',
+                  ),
+                  const SizedBox(width: 16),
+                  FoodCard(
+                    text: 'Keripik Pisang',
+                    imageUrl: 'assets/makanan_dua.png',
+                  ),
+                  const SizedBox(width: 16),
+                  FoodCard(
+                    text: 'Bola-Bola Kentang Keju',
+                    imageUrl: 'assets/makanan_tiga.png',
+                  ),
+                  const SizedBox(width: 16),
+                  FoodCard(
+                    text: 'Bibimbap Halal',
+                    imageUrl: 'assets/makanan_empat.png',
+                  ),
+                  const SizedBox(width: 16),
+                  FoodCard(
+                    text: 'Gado-Gado',
+                    imageUrl: 'assets/makanan_lima.png',
+                  ),
+                  const SizedBox(width: 16),
+                ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16, left: 24.0),
-              child: CustomList(
-                imageUrl: 'assets/instagram-icon.png',
-                foodTitle: 'UI Designer',
-                namaPembuat: 'Instagram',
+          ),
+
+          const SizedBox(height: 30),
+          Padding(
+            padding: const EdgeInsets.only(left: 24),
+            child: Text(
+              'Kesukaan Artis',
+              style: GoogleFonts.poppins(
+                color: const Color(0xff272C2F),
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16, left: 24.0),
-              child: CustomList(
-                imageUrl: 'assets/facebook-icon.png',
-                foodTitle: 'Data Scientist',
-                namaPembuat: 'Facebook',
-              ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 16, left: 24.0),
+            child: CustomList(
+              imageUrl: 'assets/review-artis.png',
+              foodTitle: 'Dimsum ala Mak Beti',
+              deskripsi: 'Dengan rasa elegan dan Manis',
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 16, left: 24.0),
-              child: CustomList(
-                imageUrl: 'assets/google-icon.png',
-                foodTitle: 'Data Scientist',
-                namaPembuat: 'Facebook',
-              ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 16, left: 24.0),
+            child: CustomList(
+              imageUrl: 'assets/review-artis2.png',
+              foodTitle: 'Gado Gado kesukaan mama rafathar',
+              deskripsi: 'wuawww',
             ),
-          ],
-        ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 16, left: 24.0),
+            child: CustomList(
+              imageUrl: 'assets/review-artis3.png',
+              foodTitle: 'Mie gacoan kesukaan semua orang',
+              deskripsi: 'sangat enak dan elegan',
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.only(top: 16, left: 24.0),
+            child: CustomList(
+              imageUrl: 'assets/review-artis4.png',
+              foodTitle: 'Bola keju yang diatas',
+              deskripsi: 'Ambil dari google',
+            ),
+          ),
+        ],
       );
     }
 
@@ -156,37 +226,33 @@ class HomePage extends StatelessWidget {
         margin: const EdgeInsets.only(top: 30),
         child: BottomNavigationBar(
           type: BottomNavigationBarType.fixed,
-          showSelectedLabels: false,
+          showSelectedLabels: true,
           unselectedItemColor: const Color(0xffB3B5C4),
           selectedItemColor: const Color(0xff272C2F),
           currentIndex: 0,
           elevation: 0,
           iconSize: 24,
-          items: [
-            const BottomNavigationBarItem(
-              icon: const ImageIcon(
-                AssetImage('assets/navbar_one.png'),
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.menu_book),
+              label: 'Home'
               ),
-              label: '',
-            ),
-            const BottomNavigationBarItem(
-              icon: ImageIcon(
-                AssetImage('assets/navbar_two.png'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.sticky_note_2),
+              label: 'Tulis Resep'
               ),
-              label: '',
-            ),
-            const BottomNavigationBarItem(
-              icon: ImageIcon(
-                const AssetImage('assets/navbar_three.png'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.outdoor_grill),
+              label: 'Masak'
               ),
-              label: '',
-            ),
-            const BottomNavigationBarItem(
-              icon: ImageIcon(
-                const AssetImage('assets/navbar_four.png'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.notifications),
+              label: 'Notifikasi'
               ),
-              label: '',
-            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Akun'
+              ),
           ],
         ),
       ),
